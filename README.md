@@ -12,7 +12,6 @@ This project explores **Transfer Learning** techniques for image classification 
 - ✅ **MobileNetV2** (Current)
 - 🔄 **ResNet50** (Planned)
 - 🔄 **EfficientNetB0** (Planned)
-- 🔄 **InceptionV3** (Optional)
 
 ---
 
