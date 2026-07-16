@@ -46,24 +46,23 @@ BootCamp/
 - Model comparison framework (ready for multiple models)
 
 ---
-
 ## 📊 Model Performance Comparison
 
-Here is how the three architectures stack up against each other on the dataset after final fine-tuning:
+Here is the breakdown of how the three configurations perform on the validation dataset:
 
 | Model Architecture | Accuracy | Precision | Recall / Sensitivity | F1-Score | Approx. Size | Training Profile |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **MobileNetV2** *(Baseline)* | ~93.80% | — | — | — | ~14 MB | Fast & Lightweight |
-| **ResNet50** | 96.53% | 95.60% | **98.06%** | 96.82% | ~98 MB | Moderate |
-| **EfficientNetV2-B0** | **98.61%** | **100.00%** | 97.42% | **98.69%** | ~29 MB | Fast & Optimized |
+| **MobileNetV2** | **98.96%** | 98.72% | **99.35%** | **99.04%** | ~14 MB | Fast & Lightweight |
+| **EfficientNetV2-B0** | 98.61% | **100.00%** | 97.42% | 98.69% | ~29 MB | Fast & Optimized |
+| **ResNet50** | 96.53% | 95.60% | 98.06% | 96.82% | ~98 MB | Moderate |
 
 ---
 
 ## 🔍 Key Takeaways
 
-* **EfficientNetV2-B0 is the Overall Winner:** It achieved the highest accuracy (**98.61%**) and a perfect **100.00% Precision** (zero false positives!). It manages this while being roughly $3\times$ smaller in file size than ResNet50.
-* **ResNet50 for Maximum Safety:** If the priority is to miss as few true positive cases as possible, ResNet50 yields the highest **Recall (98.06%)**, making it excellent at catching almost every actual target instance.
-* **Architecture Matters:** Transitioning from the lightweight MobileNetV2 baseline to EfficientNetV2 provided a massive **+4.81%** net increase in validation accuracy. 
+* **MobileNetV2 Dominates the Balance:** Surprisingly, the lightweight **MobileNetV2** baseline achieved the highest overall Accuracy (**98.96%**), Recall (**99.35%**), and F1-Score (**99.04%**). It represents the most efficient compromise between performance and deployment footprint (~14 MB).
+* **EfficientNetV2-B0 for Zero Mistakes:** If your pipeline requires absolute certainty when predicting a positive case, **EfficientNetV2-B0** achieved a perfect **100.00% Precision**, meaning it returned zero false positives.
+* **ResNet50 vs. Edge Backbones:** While **ResNet50** performs exceptionally well at **96.53%** accuracy, the parameter efficiency built into MobileNet and EfficientNet architectures proves superior for this specific image classification task.
 
 **Comparison Metrics:**
 - Accuracy & Loss
