@@ -73,13 +73,6 @@ Here is the breakdown of how the three configurations perform on the validation 
 
 ---
 
-## 📥 Dataset
-
-- Used **Custom Image Dataset** (e.g., Flowers, Cats vs Dogs, or your own dataset)
-- Applied **ImageDataGenerator** with augmentation
-
----
-
 ## 🧪 How to Run
 
 1. Open the notebook in **Google Colab**
