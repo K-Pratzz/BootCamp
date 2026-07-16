@@ -28,12 +28,9 @@ This project explores **Transfer Learning** techniques for image classification 
 
 ## 📁 Project Structure
 BootCamp/
-├── MobileNet.ipynb              # Main Notebook (MobileNetV2)
-├── ResNet50.ipynb               # (To be added)
-├── EfficientNet.ipynb           # (To be added)
-├── data/                        # Dataset folder
-├── models/                      # Saved models
-├── results/                     # Graphs & reports
+├── MobileNet.ipynb
+├── ResNet50.ipynb
+├── EfficientNet.ipynb
 └── README.md
 
 
@@ -50,26 +47,23 @@ BootCamp/
 
 ---
 
-## 📊 Results (MobileNetV2)
+## 📊 Model Performance Comparison
 
-| Metric              | Value          |
-|---------------------|----------------|
-| Test Accuracy       | ~94.5%         |
-| Validation Accuracy | ~93.8%         |
-| Training Time       | Fast (Lightweight) |
-| Model Size          | ~14 MB         |
+Here is how the three architectures stack up against each other on the dataset after final fine-tuning:
 
-*(Update this table after running other models)*
+| Model Architecture | Accuracy | Precision | Recall / Sensitivity | F1-Score | Approx. Size | Training Profile |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **MobileNetV2** *(Baseline)* | ~93.80% | — | — | — | ~14 MB | Fast & Lightweight |
+| **ResNet50** | 96.53% | 95.60% | **98.06%** | 96.82% | ~98 MB | Moderate |
+| **EfficientNetV2-B0** | **98.61%** | **100.00%** | 97.42% | **98.69%** | ~29 MB | Fast & Optimized |
 
 ---
 
-## 🔄 Model Comparison Plan
+## 🔍 Key Takeaways
 
-We will compare the following models on the same dataset:
-
-1. **MobileNetV2** – Fast, lightweight, good for mobile deployment
-2. **ResNet50** – Deep residual learning, high accuracy
-3. **EfficientNetB0** – Best accuracy-efficiency trade-off
+* **EfficientNetV2-B0 is the Overall Winner:** It achieved the highest accuracy (**98.61%**) and a perfect **100.00% Precision** (zero false positives!). It manages this while being roughly $3\times$ smaller in file size than ResNet50.
+* **ResNet50 for Maximum Safety:** If the priority is to miss as few true positive cases as possible, ResNet50 yields the highest **Recall (98.06%)**, making it excellent at catching almost every actual target instance.
+* **Architecture Matters:** Transitioning from the lightweight MobileNetV2 baseline to EfficientNetV2 provided a massive **+4.81%** net increase in validation accuracy. 
 
 **Comparison Metrics:**
 - Accuracy & Loss
