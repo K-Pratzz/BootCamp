@@ -8,10 +8,10 @@ A comparative study of deep learning models for image classification using **Tra
 
 This project explores **Transfer Learning** techniques for image classification tasks. We started with **MobileNetV2** (lightweight and efficient) and will extend the comparison with other popular architectures.
 
-### Models Implemented / Planned:
-- ✅ **MobileNetV2** (Current)
-- 🔄 **ResNet50** (Planned)
-- 🔄 **EfficientNetB0** (Planned)
+### Models Implemented:
+- ✅ **MobileNetV2**
+- 🔄 **ResNet50**
+- 🔄 **EfficientNetB0**
 
 ---
 
